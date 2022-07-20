@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace SuperShop.Data
 {
-    public class MockRepository : IRepository
+    public class MockRepository /*: IRepository*/
     {
         public void AddProduct(Product product)
         {
