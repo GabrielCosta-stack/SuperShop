@@ -7,15 +7,22 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SuperShop.Data;
 using SuperShop.Data.Entities;
+using SuperShop.Helpers;
 
 namespace SuperShop.Controllers
 {
     public class ProductsController : Controller
     {
         private IProductsRepository _productRepository;
-        public ProductsController(IProductsRepository  productRepository)
+        private readonly IUserHelper _userHelper;
+
+        public ProductsController(
+            IProductsRepository  productRepository,
+            IUserHelper userHelper
+            )
         {
            _productRepository = productRepository;
+            _userHelper = userHelper;
         }
 
         // GET: Products
@@ -57,6 +64,9 @@ namespace SuperShop.Controllers
         {
             if (ModelState.IsValid)
             {
+                // TODO: MODIFICAR PARA O USER QUE ESTIVER LOGADO
+                product.User = await _userHelper.GetUserByEmailAsync("gabriel@gmail.com");
+
                 await _productRepository.CreateAsync(product);
 
                 return RedirectToAction(nameof(Index));
@@ -97,6 +107,8 @@ namespace SuperShop.Controllers
             {
                 try
                 {
+                    // TODO: MODIFICAR PARA O USER QUE ESTIVER LOGADO
+                    product.User = await _userHelper.GetUserByEmailAsync("gabriel@gmail.com");
                     await _productRepository.UpdateAsync(product);
 
                 }
