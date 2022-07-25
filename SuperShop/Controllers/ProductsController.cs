@@ -93,20 +93,7 @@ namespace SuperShop.Controllers
             return View(model);
         }
 
-        private Product ToProduct(ProductViewModel model, string path)
-        {
-            return new Product { 
-                Id = model.Id,
-                ImageUrl = path,
-                IsAvailabe = model.IsAvailabe,
-                LastPurchase = model.LastPurchase,
-                LastSale = model.LastSale,
-                Name = model.Name,
-                Price = model.Price,
-                Stock = model.Stock,
-                User = model.User
-            };
-        }
+       
 
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -123,25 +110,13 @@ namespace SuperShop.Controllers
                 return NotFound();
             }
 
-            var model = this.ToProductViewModel(product);
+            var model = _converterHelper.ToProductViewModel(product);
 
 
             return View(model);
         }
 
-        private ProductViewModel ToProductViewModel(Product product)
-        {
-            return new ProductViewModel {
-                Id = product.Id,
-                IsAvailabe = product.IsAvailabe,
-                LastPurchase = product.LastPurchase,
-                LastSale = product.LastSale,
-                ImageUrl = product.ImageUrl,
-                Name = product.Name,
-                Stock = product.Stock,
-                User = product.User
-            };
-        }
+      
 
         // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
