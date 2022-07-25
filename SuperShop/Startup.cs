@@ -47,6 +47,8 @@ namespace SuperShop
             services.AddTransient<SeedDb>();
             services.AddScoped<IUserHelper, UserHelper>();
             services.AddScoped<IProductsRepository, ProductRepository>();
+            services.AddScoped<IImageHelper, ImageHelper>();
+            services.AddScoped<IConverterHelper, ConverterHelper>();
             
             services.AddControllersWithViews();
         }
