@@ -17,19 +17,22 @@ namespace SuperShop.Controllers
     {
         private IProductsRepository _productRepository;
         private readonly IUserHelper _userHelper;
-        private readonly IImageHelper _imageHelper;
+        //private readonly IImageHelper _imageHelper;
+        private readonly IBlobHelper _blobHelper;
         private readonly IConverterHelper _converterHelper;
 
         public ProductsController(
             IProductsRepository  productRepository,
             IUserHelper userHelper,
-            IImageHelper imageHelper,
+            //IImageHelper imageHelper,
+            IBlobHelper blobHelper,
             IConverterHelper converterHelper
             )
         {
            _productRepository = productRepository;
            _userHelper = userHelper;
-           _imageHelper = imageHelper;
+            //_imageHelper = imageHelper;
+           _blobHelper = blobHelper;
            _converterHelper = converterHelper;
         }
 
@@ -72,16 +75,20 @@ namespace SuperShop.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                var path = string.Empty;
+                Guid imageId = Guid.Empty;
+                //var path = string.Empty;
 
                 if(model.ImageFile != null && model.ImageFile.Length > 0)
                 {
-                    path = await _imageHelper.UploadImageAsync(model.ImageFile, "products");
+                    //path = await _imageHelper.UploadImageAsync(model.ImageFile, "products");
+
+                    // nome da pasta´é a que está no AZURE, contentores
+                    imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "products");
 
                 }
 
-                var product = _converterHelper.ToProduct(model, path, true);
+                //var product = _converterHelper.ToProduct(model, path, true);
+                var product = _converterHelper.ToProduct(model, imageId, true);
 
                 // TODO: MODIFICAR PARA O USER QUE ESTIVER LOGADO
                 product.User = await _userHelper.GetUserByEmailAsync("gabriel@gmail.com");
@@ -131,16 +138,19 @@ namespace SuperShop.Controllers
                 try
                 {
 
-                    var path = model.ImageUrl;
+                    //var path = model.ImageUrl;
+                    Guid imageId = model.ImageId; // Está na página Edit como inputHiden,
+                                                  // mudar na view no projeto Leasing
 
                     if(model.ImageFile != null && model.ImageFile.Length > 0)
                     {
-                        
-
-                        path = await _imageHelper.UploadImageAsync(model.ImageFile, "products");
+                        //path = await _imageHelper.UploadImageAsync(model.ImageFile, "products");
+                        // nome da pasta´é a que está no AZURE, contentores
+                        imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "products");
                     }
 
-                    var product = _converterHelper.ToProduct(model, path, false);
+                    //var product = _converterHelper.ToProduct(model, path, false);
+                    var product = _converterHelper.ToProduct(model, imageId, false);
 
 
                     // TODO: MODIFICAR PARA O USER QUE ESTIVER LOGADO
