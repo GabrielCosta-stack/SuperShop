@@ -156,3 +156,4 @@ C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\Micr
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\Microsoft.WindowsAzure.Storage.dll
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Products\_Products.cshtml.g.cs
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs

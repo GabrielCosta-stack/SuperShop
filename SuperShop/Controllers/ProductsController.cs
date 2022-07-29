@@ -63,7 +63,7 @@ namespace SuperShop.Controllers
         }
 
         // GET: Products/Create
-        [Authorize]
+        [Authorize] // Impede o user de criar produto
         public IActionResult Create()
         {
             return View();
@@ -93,8 +93,8 @@ namespace SuperShop.Controllers
                 //var product = _converterHelper.ToProduct(model, path, true);
                 var product = _converterHelper.ToProduct(model, imageId, true);
 
-                // TODO: MODIFICAR PARA O USER QUE ESTIVER LOGADO
-                product.User = await _userHelper.GetUserByEmailAsync("gabriel@gmail.com");
+                // Atribui o user que está logado ao produto
+                product.User = await _userHelper.GetUserByEmailAsync(this.User.Identity.Name);
 
                 await _productRepository.CreateAsync(product);
 
@@ -157,8 +157,8 @@ namespace SuperShop.Controllers
                     var product = _converterHelper.ToProduct(model, imageId, false);
 
 
-                    // TODO: MODIFICAR PARA O USER QUE ESTIVER LOGADO
-                    product.User = await _userHelper.GetUserByEmailAsync("gabriel@gmail.com");
+                    //  MODIFICA PARA O USER QUE ESTIVER LOGADO
+                    product.User = await _userHelper.GetUserByEmailAsync(this.User.Identity.Name);
                     await _productRepository.UpdateAsync(product);
 
                 }
@@ -179,6 +179,7 @@ namespace SuperShop.Controllers
         }
 
         // GET: Products/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
