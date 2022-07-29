@@ -73,6 +73,7 @@ namespace SuperShop
 
             app.UseRouting();
 
+            // Necessário para o SignIn : ATENÇÃO - Nesta ordem 
             app.UseAuthentication();
             app.UseAuthorization();
 
