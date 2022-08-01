@@ -26,7 +26,10 @@ namespace SuperShop.Data
 
             var user = await _userHelper.GetUserByEmailAsync("gabriel@gmail.com");
 
-            if(user == null)
+            await _userHelper.CheckRoleAsync("Admin");
+            await _userHelper.CheckRoleAsync("Customer");
+
+            if (user == null)
             {
                 user = new User
                 {
@@ -43,6 +46,15 @@ namespace SuperShop.Data
                 {
                     throw new InvalidOperationException("Could not create the user, in seeder class");
                 }
+
+                await _userHelper.AddUserToRoleAsync(user, "Admin");
+            }
+
+            var isInRole = await _userHelper.IsUserInRoleAsync(user, "Admin");
+
+            if(!isInRole)
+            {
+                await _userHelper.AddUserToRoleAsync(user, "Admin");
             }
 
             if(!_context.Products.Any())

@@ -63,7 +63,7 @@ namespace SuperShop.Controllers
         }
 
         // GET: Products/Create
-        [Authorize] // Impede o user de criar produto
+        [Authorize(Roles ="Admin")] // Apenas Admin pode criar produtos
         public IActionResult Create()
         {
             return View();
