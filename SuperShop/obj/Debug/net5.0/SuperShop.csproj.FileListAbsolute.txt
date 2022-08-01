@@ -160,3 +160,6 @@ C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razo
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Account\ChangeUser.cshtml.g.cs
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Account\ChangePassword.cshtml.g.cs
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\libman.json
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Account\NotAuthorized.cshtml.g.cs
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Products\ProductNotFound.cshtml.g.cs
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Home\Error404.cshtml.g.cs
