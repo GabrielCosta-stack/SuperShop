@@ -89,6 +89,8 @@ namespace SuperShop.Controllers
                         return View(model);
                     }
 
+                    await _userHelper.AddUserToRoleAsync(user, "Customer");
+
                     var loginViewModel = new LoginViewModel {
                         Password = model.Password,
                         RememberMe = false,
@@ -104,6 +106,13 @@ namespace SuperShop.Controllers
 
                     ModelState.AddModelError(string.Empty, "The user couldn't be logged ");
  
+                }
+
+                var isInRole = await _userHelper.IsUserInRoleAsync(user, "Customer");
+
+                if (!isInRole)
+                {
+                    await _userHelper.AddUserToRoleAsync(user, "Customer");
                 }
 
             }
