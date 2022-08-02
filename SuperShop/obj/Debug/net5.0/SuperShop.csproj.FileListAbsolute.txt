@@ -164,3 +164,5 @@ C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razo
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Products\ProductNotFound.cshtml.g.cs
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Home\Error404.cshtml.g.cs
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Orders\Index.cshtml.g.cs
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Orders\Create.cshtml.g.cs
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Orders\AddProduct.cshtml.g.cs
