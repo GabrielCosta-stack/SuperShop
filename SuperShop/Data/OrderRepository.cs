@@ -174,5 +174,25 @@ namespace SuperShop.Data
 
             return true;
         }
+
+        public async Task DeliveryOrder(DeliveryViewModel model)
+        {
+            var order = await _context.Orders.FindAsync(model.Id);
+
+            if(order == null)
+            {
+                return;
+            }
+
+            order.OrderDate = model.DeliveryDate;
+            _context.Orders.Update(order);
+            await _context.SaveChangesAsync();
+
+        }
+
+        public async Task<Order> GetOrderAsync(int id)
+        {
+            return await _context.Orders.FindAsync(id);
+        }
     }
 }
