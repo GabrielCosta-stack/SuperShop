@@ -24,5 +24,7 @@ namespace SuperShop.Helpers
         Task AddUserToRoleAsync(User user, string roleName);
         // confirma se o user já tem um determinado role
         Task<bool> IsUserInRoleAsync(User user, string roleName);
+
+        Task<SignInResult> ValidatePasswordAsync(User user, string password);
     }
 }

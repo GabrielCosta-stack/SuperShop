@@ -175,3 +175,4 @@ C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razo
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Countries\Details.cshtml.g.cs
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Countries\AddCity.cshtml.g.cs
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Countries\EditCity.cshtml.g.cs
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

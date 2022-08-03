@@ -82,5 +82,12 @@ namespace SuperShop.Helpers
         {
             return await _userManager.UpdateAsync(user);
         }
+
+        public async Task<SignInResult> ValidatePasswordAsync(User user, string password)
+        {
+            // o valor 'false' é para não bloquear após X tentativas
+            // em modo de 'Production' tem que ser true
+            return await _signInManager.CheckPasswordSignInAsync(user, password, false);
+        }
     }
 }
