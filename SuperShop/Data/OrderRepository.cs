@@ -10,8 +10,8 @@ namespace SuperShop.Data
 {
     public class OrderRepository : GenericRepository<Order>, IOrderRepository
     {
-        public DataContext _context { get; }
-        public IUserHelper _userHelper { get; }
+        public DataContext _context { get; set; }
+        public IUserHelper _userHelper { get; set; }
 
         public OrderRepository(DataContext context, IUserHelper userHelper) : base(context)
         {

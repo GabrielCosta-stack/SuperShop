@@ -7,9 +7,7 @@ namespace SuperShop.Helpers
 {
     public class UserHelper : IUserHelper
     {
-        // UserManager gestão de utilizadores
         private readonly UserManager<User> _userManager;
-        // SigInManager gestão de login
         private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
@@ -41,16 +39,32 @@ namespace SuperShop.Helpers
             return await _userManager.ChangePasswordAsync(user, oldPassword, newPassword);
         }
 
-        public async Task CheckRoleAsync(string rolename)
+        public async Task CheckRoleAsync(string roleName)
         {
-            var roleExist = await _roleManager.RoleExistsAsync(rolename);
-
-            if(!roleExist)
+            var roleExists = await _roleManager.RoleExistsAsync(roleName);
+            if (!roleExists)
             {
-                await _roleManager.CreateAsync(new IdentityRole { 
-                    Name = rolename
+                await _roleManager.CreateAsync(new IdentityRole
+                {
+                    Name = roleName
                 });
             }
+        }
+
+        public async Task<IdentityResult> ConfirmEmailAsync(User user, string token)
+        {
+            return await _userManager.ConfirmEmailAsync(user, token);
+        }
+
+
+        public async Task<string> GenerateEmailConfirmationTokenAsync(User user)
+        {
+            return await _userManager.GenerateEmailConfirmationTokenAsync(user);
+        }
+
+        public async Task<string> GeneratePasswordResetTokenAsync(User user)
+        {
+            return await _userManager.GeneratePasswordResetTokenAsync(user);
         }
 
         public async Task<User> GetUserByEmailAsync(string email)
@@ -58,10 +72,16 @@ namespace SuperShop.Helpers
             return await _userManager.FindByEmailAsync(email);
         }
 
+        public async Task<User> GetUserByIdAsync(string userId)
+        {
+            return await _userManager.FindByIdAsync(userId);
+        }
+
         public async Task<bool> IsUserInRoleAsync(User user, string roleName)
         {
             return await _userManager.IsInRoleAsync(user, roleName);
         }
+
 
         public async Task<SignInResult> LoginAsync(LoginViewModel model)
         {
@@ -69,13 +89,17 @@ namespace SuperShop.Helpers
                 model.Username,
                 model.Password,
                 model.RememberMe,
-                false
-                );
+                false);
         }
 
         public async Task LogoutAsync()
         {
             await _signInManager.SignOutAsync();
+        }
+
+        public async Task<IdentityResult> ResetPasswordAsync(User user, string token, string password)
+        {
+            return await _userManager.ResetPasswordAsync(user, token, password);
         }
 
         public async Task<IdentityResult> UpdateUserAsync(User user)
@@ -85,9 +109,10 @@ namespace SuperShop.Helpers
 
         public async Task<SignInResult> ValidatePasswordAsync(User user, string password)
         {
-            // o valor 'false' é para não bloquear após X tentativas
-            // em modo de 'Production' tem que ser true
-            return await _signInManager.CheckPasswordSignInAsync(user, password, false);
+            return await _signInManager.CheckPasswordSignInAsync(
+                user,
+                password,
+                false);
         }
     }
 }
