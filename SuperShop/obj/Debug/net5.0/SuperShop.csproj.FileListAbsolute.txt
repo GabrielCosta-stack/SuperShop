@@ -180,3 +180,13 @@ C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\Mail
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\MimeKit.dll
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\BouncyCastle.Crypto.dll
 C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Account\ConfirmEmail.cshtml.g.cs
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Account\RecoverPassword.cshtml.g.cs
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\Razor\Views\Shared\_ValidationCurrencyPartial.cshtml.g.cs
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\bin\Debug\net5.0\Vereyon.Web.FlashMessage.dll
+C:\Users\gnoo\Documents\CINEL\Prog.WEB\SuperShop\SuperShop\obj\Debug\net5.0\SuperShop.MvcApplicationPartsAssemblyInfo.cs

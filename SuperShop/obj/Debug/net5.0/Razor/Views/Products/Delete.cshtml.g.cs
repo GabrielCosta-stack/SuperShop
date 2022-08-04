@@ -27,7 +27,7 @@ using SuperShop.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"038c9c7dcb1f4b3997dd8a3e737f7408bedc2359", @"/Views/Products/Delete.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9bc0ba09e6f52cf9122a52cab31853fd2eaa07f1", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c26f43e3aa7183821661b2c0bf406315fefe52cc", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Products_Delete : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<SuperShop.Data.Entities.Product>
     #nullable disable
